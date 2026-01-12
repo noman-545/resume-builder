@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PDF Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<h1>Online Resume Builder</h1>
+
+<select onchange="changeTemplate(this.value)">
+  <option value="template1">Classic</option>
+  <option value="template2">Modern Dark</option>
+  <option value="template3">Professional Blue</option>
+  <option value="template4">Minimal Gray</option>
+</select>
+
+<div class="container">
+
+  <!-- FORM -->
+  <div class="form">
+    <input id="name" placeholder="Full Name">
+    <input id="email" placeholder="Email">
+    <input id="phone" placeholder="Phone Number">
+    <input id="linkedin" placeholder="LinkedIn URL">
+    <input id="github" placeholder="GitHub URL">
+
+    <textarea id="objective" placeholder="Career Objective"></textarea>
+    <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+
+    <textarea id="education" placeholder="Education (College, Degree)"></textarea>
+    <input id="cgpa" placeholder="CGPA">
+
+    <textarea id="internships" placeholder="Internships"></textarea>
+    <textarea id="projects" placeholder="Projects"></textarea>
+
+    <button onclick="generateResume()">Generate Resume</button>
+    <button onclick="downloadPDF()">Download PDF</button>
+  </div>
+
+  <!-- RESUME -->
+  <div class="resume template1" id="resume">
+    <h2 id="r-name"></h2>
+    <p id="r-email"></p>
+    <p id="r-phone"></p>
+    <p id="r-links"></p>
+
+    <h3>Objective</h3>
+    <p id="r-objective"></p>
+
+    <h3>Skills</h3>
+    <ul id="r-skills"></ul>
+
+    <h3>Education</h3>
+    <div class="edu-row">
+      <span id="r-education"></span>
+      <span id="r-cgpa" class="cgpa"></span>
+    </div>
+
+    <h3>Internships</h3>
+    <p id="r-internships"></p>
+
+    <h3>Projects</h3>
+    <p id="r-projects"></p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+select {
+  display: block;
+  margin: 10px auto 20px;
+  padding: 8px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.form, .resume {
+  background: white;
+  padding: 20px;
+  width: 50%;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  height: 60px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background: #0a58ca;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #084298;
+  transform: scale(1.04);
+}
+
+/* Education Row */
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.cgpa {
+  color: inherit;
+}
+
+/* ================= ANIMATIONS ================= */
+
+.resume {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.resume h3,
+.resume p,
+.resume ul,
+.edu-row {
+  animation: slideUp 0.6s ease;
+}
+
+.resume ul li {
+  animation: popIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ================= TEMPLATES ================= */
+
+/* Template 1 */
+.template1 {
+  font-family: Arial;
+}
+
+/* Template 2 */
+.template2 {
+  background: #111;
+  color: white;
+  font-family: Georgia;
+}
+
+/* Template 3 */
+.template3 {
+  font-family: "Segoe UI";
+  border-left: 8px solid #0a58ca;
+  padding-left: 20px;
+}
+
+/* Template 4 */
+.template4 {
+  font-family: Arial;
+  background: #f8f9fa;
+  border-top: 6px solid #6c757d;
+  padding-top: 20px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .form, .resume {
+    width: 100%;
+  }
+}
