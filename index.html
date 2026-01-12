@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Online Resume Builder</title>
+  <title>Resume Builder</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- PDF Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <!-- REQUIRED for Chrome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 
@@ -14,9 +15,9 @@
 
 <select onchange="changeTemplate(this.value)">
   <option value="template1">Classic</option>
-  <option value="template2">Modern Dark</option>
-  <option value="template3">Professional Blue</option>
-  <option value="template4">Minimal Gray</option>
+  <option value="template2">Dark</option>
+  <option value="template3">Blue</option>
+  <option value="template4">Minimal</option>
 </select>
 
 <div class="container">
@@ -30,7 +31,9 @@
     <input id="github" placeholder="GitHub URL">
 
     <textarea id="objective" placeholder="Career Objective"></textarea>
-    <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+
+    <textarea id="skills" placeholder="Technical Skills (comma separated)"></textarea>
+    <textarea id="skills2" placeholder="Skills (communication, teamwork, etc.)"></textarea>
 
     <textarea id="education" placeholder="Education (College, Degree)"></textarea>
     <input id="cgpa" placeholder="CGPA">
@@ -52,13 +55,16 @@
     <h3>Objective</h3>
     <p id="r-objective"></p>
 
-    <h3>Skills</h3>
+    <h3>Technical Skills</h3>
     <ul id="r-skills"></ul>
+
+    <h3>Skills</h3>
+    <p id="r-skills2"></p>
 
     <h3>Education</h3>
     <div class="edu-row">
       <span id="r-education"></span>
-      <span id="r-cgpa" class="cgpa"></span>
+      <span id="r-cgpa"></span>
     </div>
 
     <h3>Internships</h3>
@@ -73,3 +79,9 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
